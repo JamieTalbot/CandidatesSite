@@ -1,0 +1,99 @@
+﻿@model IEnumerable<CandidatesSite.Models.Candidate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_NET_ASP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CSS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HTML)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Java)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JavaScript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Python)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Python_Flask)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_NET_ASP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CSS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HTML)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Java)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JavaScript)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Python)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Python_Flask)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
