@@ -11,21 +11,27 @@ namespace CandidatesSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Candidate
     {
         public int Id { get; set; }
+        [DisplayName("First Name")]
         public string First_Name { get; set; }
+        [DisplayName("Last Name")]
         public string Last_Name { get; set; }
+        [DisplayName("Date of Birth")]
         public System.DateTime Date_of_Birth { get; set; }
         public string Location { get; set; }
         public string Email { get; set; }
+        [DisplayName("C#.NET & ASP")]
         public Nullable<int> C_NET_ASP { get; set; }
         public Nullable<int> CSS { get; set; }
         public Nullable<int> HTML { get; set; }
         public Nullable<int> Java { get; set; }
         public Nullable<int> JavaScript { get; set; }
         public Nullable<int> Python { get; set; }
+        [DisplayName("Python Flask")]
         public Nullable<int> Python_Flask { get; set; }
     }
 }
