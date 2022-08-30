@@ -31,7 +31,12 @@ namespace CandidatesSite.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-            return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
     }
 }
