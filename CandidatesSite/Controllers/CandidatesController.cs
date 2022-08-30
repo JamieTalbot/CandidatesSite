@@ -20,6 +20,12 @@ namespace CandidatesSite.Controllers
             return View(db.Candidates.ToList());
         }
 
+        // GET: Candidates/Admin
+        public ActionResult Admin()
+        {
+            return View(db.Candidates.ToList());
+        }
+
         // GET: Candidates/Details/5
         public ActionResult Details(int? id)
         {
