@@ -12,6 +12,7 @@ namespace CandidatesSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class Candidate
     {
@@ -21,6 +22,7 @@ namespace CandidatesSite.Models
         [DisplayName("Last Name")]
         public string Last_Name { get; set; }
         [DisplayName("Date of Birth")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime Date_of_Birth { get; set; }
         public string Location { get; set; }
         public string Email { get; set; }
