@@ -26,6 +26,118 @@ namespace CandidatesSite.Controllers
             return View(db.Candidates.ToList());
         }
 
+        // SEARCH FUNCTION FOR: Candidates/Admin
+        public JsonResult GetSearchingData(string SearchBy, string SearchValue)
+        {
+            List<Candidate> CandidateList = new List<Candidate>();
+            if(SearchBy == "C_NET_ASP")
+            {
+                try
+                {
+                    int C_NET_ASP = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.C_NET_ASP == C_NET_ASP || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for C#.NET & ASP", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "CSS")
+            {
+                try
+                {
+                    int CSS = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.CSS == CSS || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for CSS", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "HTML")
+            {
+                try
+                {
+                    int HTML = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.HTML == HTML || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for HTML", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "Java")
+            {
+                try
+                {
+                    int Java = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.Java == Java || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for Java", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "JavaScript")
+            {
+                try
+                {
+                    int JavaScript = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.JavaScript == JavaScript || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for JavaScript", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "Python")
+            {
+                try
+                {
+                    int Python = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.Python == Python || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for C#.NET & ASP", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "Python_Flask")
+            {
+                try
+                {
+                    int Python_Flask = Convert.ToInt32(SearchValue);
+                    CandidateList = db.Candidates.Where(x => x.Python_Flask == Python_Flask || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} is not valid for Python Flask", SearchValue);
+                }
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "Location")
+            {
+                CandidateList = db.Candidates.Where(x => x.Location.Contains(SearchValue) || SearchValue == null).ToList();
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            if (SearchBy == "Email")
+            {
+                CandidateList = db.Candidates.Where(x => x.Email.Contains(SearchValue) || SearchValue == null).ToList();
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                CandidateList = db.Candidates.Where(x => x.Last_Name.Contains(SearchValue) || SearchValue == null).ToList();
+                return Json(CandidateList, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         // GET: Candidates/Details/5
         public ActionResult Details(int? id)
         {
