@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.First_Name) @Html.DisplayFor(model => model.Last_Name)</h2>
 
 <div>
     <h4>Candidate</h4>
@@ -55,7 +55,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.C_NET_ASP)
+            <progress id="C_NET_ASP" value="@Html.DisplayFor(model => model.C_NET_ASP)" max="5"></progress>
         </dd>
 
         <dt>
@@ -63,7 +63,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CSS)
+            <progress id="CSS" value="@Html.DisplayFor(model => model.CSS)" max="5"></progress>
         </dd>
 
         <dt>
@@ -71,7 +71,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HTML)
+            <progress id="HTML" value="@Html.DisplayFor(model => model.HTML)" max="5"></progress>
         </dd>
 
         <dt>
@@ -79,7 +79,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Java)
+            <progress id="Java" value="@Html.DisplayFor(model => model.Java)" max="5"></progress>
         </dd>
 
         <dt>
@@ -87,7 +87,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.JavaScript)
+            <progress id="JavaScript" value="@Html.DisplayFor(model => model.JavaScript)" max="5"></progress>
         </dd>
 
         <dt>
@@ -95,7 +95,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Python)
+            <progress id="Python" value="@Html.DisplayFor(model => model.Python)" max="5"></progress>
         </dd>
 
         <dt>
@@ -103,12 +103,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Python_Flask)
+            <progress id="Python_Flask" value="@Html.DisplayFor(model => model.Python_Flask)" max="5"></progress>
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
