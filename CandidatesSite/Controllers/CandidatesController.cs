@@ -202,7 +202,7 @@ namespace CandidatesSite.Controllers
             {
                 db.Entry(candidate).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
             return View(candidate);
         }
@@ -230,7 +230,7 @@ namespace CandidatesSite.Controllers
             Candidate candidate = db.Candidates.Find(id);
             db.Candidates.Remove(candidate);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)
